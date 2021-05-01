@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Madlibs Home {% endblock %}
+
+{% block content %}
+<h1>Create Madlibs</h1>
+<form action="/story">
+    {% for question in questions %}
+    <p>{{question}}</p>
+    <input type="text" placeholder="Add {{question}}" name="{{question}}">
+    {% endfor %}
+    <button>Submit</button>
+</form>
+{% endblock %}
